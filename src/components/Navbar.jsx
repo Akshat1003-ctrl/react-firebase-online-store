@@ -6,6 +6,39 @@ import { db } from '../firebaseConfig.js';
 import { useCart } from '../context/CartContext.jsx';
 import './Navbar.css';
 
+// --- SOLUTION: Step 1 ---
+// Define SearchBarForm as a standalone component outside of Navbar.
+// It now receives all the data and functions it needs as props.
+const SearchBarForm = ({
+  searchTerm,
+  setSearchTerm,
+  handleSearchSubmit,
+  categories
+}) => {
+  return (
+    <form className="search-bar" onSubmit={handleSearchSubmit}>
+      <select className="search-category-dropdown">
+        <option value="all">All</option>
+        {categories.map(category => (
+          <option key={category} value={category}>{category}</option>
+        ))}
+      </select>
+      <input
+        type="text"
+        className="search-input"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <button type="submit" className="search-button">
+        <FiSearch />
+      </button>
+    </form>
+  );
+};
+
+
+// --- The Navbar Component ---
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -28,32 +61,20 @@ const Navbar = () => {
     if (searchTerm.trim()) {
       navigate(`/search?q=${searchTerm.trim()}`);
       setSearchTerm('');
-      setIsMenuOpen(false); 
+      setIsMenuOpen(false); // Close menu after search
     }
   };
 
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
 
-  const SearchBarForm = () => (
-    <form className="search-bar" onSubmit={handleSearchSubmit}>
-      <select className="search-category-dropdown">
-        <option value="all">All</option>
-        {categories.map(category => (
-          <option key={category} value={category}>{category}</option>
-        ))}
-      </select>
-      <input
-        type="text"
-        className="search-input"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <button type="submit" className="search-button">
-        <FiSearch />
-      </button>
-    </form>
-  );
+  // --- SOLUTION: Step 2 ---
+  // Create a props object to pass to the SearchBarForm component
+  const searchBarProps = {
+    searchTerm,
+    setSearchTerm,
+    handleSearchSubmit,
+    categories
+  };
 
   return (
     <>
@@ -65,7 +86,8 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-center-desktop">
-          <SearchBarForm />
+          {/* Pass the props to the SearchBarForm */}
+          <SearchBarForm {...searchBarProps} />
         </div>
 
         <div className="navbar-right-desktop">
@@ -84,7 +106,8 @@ const Navbar = () => {
       
       <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
         <div className="mobile-menu-search">
-            <SearchBarForm />
+           {/* Pass the props to the SearchBarForm here as well */}
+           <SearchBarForm {...searchBarProps} />
         </div>
         <nav className="mobile-menu-links">
             <Link to="/shop" className="mobile-menu-link" onClick={() => setIsMenuOpen(false)}>Shop All Products</Link>
