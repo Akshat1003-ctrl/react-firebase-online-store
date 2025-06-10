@@ -52,7 +52,7 @@ const HomePage = () => {
     <div className="homepage-container">
       {/* You can add a hero banner or welcome message here */}
       <div className="hero-section">
-          <h1>Welcome to Our Store</h1>
+          <h1>Welcome to the future of Shopping</h1>
           <p>Discover products curated just for you.</p>
       </div>
 

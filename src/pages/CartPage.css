@@ -1,0 +1,113 @@
+.cart-container, .cart-empty {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+  }
+  
+  .cart-empty {
+    text-align: center;
+  }
+  
+  .start-shopping-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .cart-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .cart-items-list {
+    flex: 2 1 600px;
+  }
+  
+  .cart-item {
+    display: flex;
+    gap: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding: 1.5rem 0;
+  }
+  
+  .cart-item-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .cart-item-details {
+    flex-grow: 1;
+  }
+  .cart-item-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .cart-item-price {
+    color: #555;
+    margin: 0.5rem 0;
+  }
+  .cart-item-quantity input {
+    width: 50px;
+    padding: 0.3rem;
+    text-align: center;
+  }
+  
+  .cart-item-actions {
+    text-align: right;
+  }
+  .cart-item-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .remove-item-btn {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  /* Summary Box */
+  .cart-summary {
+    flex: 1 1 300px;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    height: fit-content;
+  }
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .summary-row.total {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+@media (max-width: 992px) {
+  .cart-content {
+    flex-direction: column;
+  }
+}
