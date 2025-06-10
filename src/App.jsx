@@ -2,13 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext.jsx';
 
-// Import Pages
 import HomePage from './pages/HomePage.jsx';
 import SearchResultsPage from './pages/SearchResultsPage.jsx';
 import CartPage from './pages/CartPage.jsx';
-import AccountPage from './pages/AccountPage.jsx'; // 1. Import the new page
+import AccountPage from './pages/AccountPage.jsx'; 
 
-// Import Components
+
 import Navbar from './components/Navbar.jsx';
 import ProductList from './components/ProductList.jsx';
 import ProductDetail from './components/ProductDetail.jsx';

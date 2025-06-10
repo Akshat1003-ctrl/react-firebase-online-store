@@ -7,14 +7,12 @@ import './SearchResultsPage.css';
 
 const SearchResultsPage = () => {
   const [searchParams] = useSearchParams();
-  const query = searchParams.get('q'); // Gets the search term from the URL (e.g., ?q=laptop)
-
+  const query = searchParams.get('q'); 
   const [allProducts, setAllProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // 1. Fetch all products once
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -37,7 +35,6 @@ const SearchResultsPage = () => {
     fetchProducts();
   }, []);
 
-  // 2. Filter products whenever the query or the list of all products changes
   useEffect(() => {
     if (!loading && query) {
       const lowercasedQuery = query.toLowerCase();

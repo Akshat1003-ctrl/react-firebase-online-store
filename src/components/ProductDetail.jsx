@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig.js';
-import { useCart } from '../context/CartContext.jsx'; // 1. Import useCart
+import { useCart } from '../context/CartContext.jsx'; 
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -11,9 +11,9 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  const { addToCart } = useCart(); // 2. Get the addToCart function
+  const { addToCart } = useCart(); 
 
-  // ... (useEffect for fetching the product remains the same)
+  
   useEffect(() => {
     const fetchProduct = async () => {
       try {

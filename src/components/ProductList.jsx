@@ -40,7 +40,6 @@ const ProductList = () => {
     return <p className="status-message error">{error}</p>;
   }
 
-  // Handle the case where there are no products in the database
   if (products.length === 0) {
     return <p className="status-message">No products found. Please add products to your Firestore database.</p>;
   }

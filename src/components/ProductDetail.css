@@ -61,7 +61,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    align-self: flex-start; /* Don't stretch the button */
+    align-self: flex-start; 
   }
   
   .add-to-cart-btn:hover {

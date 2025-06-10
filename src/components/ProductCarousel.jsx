@@ -4,7 +4,7 @@ import './ProductCarousel.css';
 
 const ProductCarousel = ({ title, products }) => {
   if (!products || products.length === 0) {
-    return null; // Don't render anything if there are no products for this category
+    return null; 
   }
 
   return (

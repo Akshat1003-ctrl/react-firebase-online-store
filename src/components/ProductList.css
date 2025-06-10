@@ -1,6 +1,5 @@
 @media (max-width: 600px) {
   .product-grid, .search-results-grid {
-    /* On small phones, adjust the min size of cards for a better fit */
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
   }
@@ -31,8 +30,8 @@
   }
   
   .status-message.error {
-    color: #D8000C; /* A standard error red color */
-    background-color: #FFD2D2; /* A light red background */
+    color: #D8000C; 
+    background-color: #FFD2D2; 
     border: 1px solid #D8000C;
     border-radius: 8px;
   }

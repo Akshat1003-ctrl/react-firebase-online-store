@@ -28,7 +28,7 @@ const Navbar = () => {
     if (searchTerm.trim()) {
       navigate(`/search?q=${searchTerm.trim()}`);
       setSearchTerm('');
-      setIsMenuOpen(false); // Close menu after search
+      setIsMenuOpen(false); 
     }
   };
 

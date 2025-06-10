@@ -3,18 +3,15 @@ import { Link } from 'react-router-dom';
 import './AccountPage.css';
 
 const AccountPage = () => {
-  // This state determines whether to show the Login or Register form
   const [isLoginView, setIsLoginView] = useState(true);
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    // Login logic will go here in the future
     alert("Login functionality not yet implemented.");
   };
 
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
-    // Registration logic will go here in the future
     alert("Registration functionality not yet implemented.");
   };
 
@@ -22,7 +19,6 @@ const AccountPage = () => {
     <div className="account-page-container">
       <div className="form-container">
         {isLoginView ? (
-          // Login Form
           <div className="auth-form">
             <h2>Login</h2>
             <form onSubmit={handleLoginSubmit}>
@@ -44,7 +40,6 @@ const AccountPage = () => {
             </p>
           </div>
         ) : (
-          // Registration Form
           <div className="auth-form">
             <h2>Create Account</h2>
             <form onSubmit={handleRegisterSubmit}>

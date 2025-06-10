@@ -18,7 +18,7 @@ const HomePage = () => {
         
         const groupedProducts = productSnapshot.docs.reduce((acc, doc) => {
           const product = { id: doc.id, ...doc.data() };
-          const category = product.category || 'Other'; // Group products without a category under 'Other'
+          const category = product.category || 'Other'; 
           
           if (!acc[category]) {
             acc[category] = [];

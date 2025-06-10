@@ -5,28 +5,28 @@
   .carousel-title {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    padding-left: 1rem; /* Align with content padding */
+    padding-left: 1rem; 
   }
   
   .carousel-track {
     display: flex;
-    overflow-x: auto; /* This enables horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Makes scrolling snap to items */
-    padding-bottom: 1rem; /* Space for scrollbar */
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    padding-bottom: 1rem; 
     gap: 1rem;
   }
   
-  /* Hide scrollbar for a cleaner look */
+  
   .carousel-track::-webkit-scrollbar {
     display: none;
   }
   .carousel-track {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
   }
   
   .carousel-item {
-    flex: 0 0 auto; /* Prevents items from shrinking */
-    width: 250px; /* Or whatever width you prefer for your tiles */
-    scroll-snap-align: start; /* Snap to the start of the item */
+    flex: 0 0 auto; 
+    width: 250px; 
+    scroll-snap-align: start; 
   }
